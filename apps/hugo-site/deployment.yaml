@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aj-blogs
+  namespace: hugo
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: aj-blogs
+  template:
+    metadata:
+      labels:
+        app: aj-blogs
+    spec:
+      containers:
+        - name: aj-blogs
+          image: bozosapien/hugo-site:latest
+          ports:
+            - containerPort: 80
