@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
         - name: aj-blogs
-          image: bozosapien/hugo-site:latest
+          image: bozosapien/hugo-site:v1.0.1 # {"$imagepolicy": "flux-system:hugo-site-policy"}
           ports:
             - containerPort: 80
