@@ -1,8 +1,24 @@
-# apps/hugo-site/kustomization.yaml
-apiVersion: kustomize.config.k8s.io/v1beta1
+apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
-resources:
-  - namespace.yaml
-  - deployment.yaml
-  - service.yaml
-  - ingress.yaml
+metadata:
+  name: gitops-repo
+  namespace: hugo
+spec:
+  interval: 5m
+  targetNamespace: hugo
+  sourceRef:
+    kind: GitRepository
+    name: gitops-repo
+  path: "./apps/hugo-site"
+  prune: true
+  timeout: 1m
+
+
+# # apps/hugo-site/kustomization.yaml
+# apiVersion: kustomize.config.k8s.io/v1beta1
+# kind: Kustomization
+# resources:
+#   - namespace.yaml
+#   - deployment.yaml
+#   - service.yaml
+#   - ingress.yaml

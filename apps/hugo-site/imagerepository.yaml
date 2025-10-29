@@ -2,7 +2,7 @@ apiVersion: source.toolkit.fluxcd.io/v1
 kind: ImageRepository
 metadata:
   name: hugo-site
-  namespace: flux-system
+  namespace: hugo
 spec:
   image: bozosapien/hugo-site
   interval: 1m0s
