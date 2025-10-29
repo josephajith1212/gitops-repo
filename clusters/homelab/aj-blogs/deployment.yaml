@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aj-blogs
+  namespace: hugo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aj-blogs
+  template:
+    metadata:
+      labels:
+        app: aj-blogs
+    spec:
+      containers:
+        - name: aj-blogs
+          image: bozosapien/hugo-site:v1.0.2 # {"$imagepolicy": "flux-system:aj-blogs-docker-registry"}
+          ports:
+            - containerPort: 80
