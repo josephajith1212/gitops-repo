@@ -6,7 +6,6 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: traefik
     traefik.ingress.kubernetes.io/router.entrypoints: websecure
-    traefik.ingress.kubernetes.io/router.middlewares: hugo-blog-strip@kubernetescrd
 spec:
   ingressClassName: traefik
   rules:
