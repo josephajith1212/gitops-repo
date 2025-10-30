@@ -21,4 +21,4 @@ spec:
     name: flux-system
   update:
     path: ./clusters/homelab/aj-blogs
-    strategy: Replace
+    strategy: Setters
